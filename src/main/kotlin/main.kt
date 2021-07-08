@@ -362,8 +362,25 @@ fun main(args: Array<String>) {
     fun format(userName1: String  = "Momo", domain1:String = "Log.com")= println("$userName1: $domain1")
     format(domain1 = "bar.com", userName1 = "foo")
 
+    //todo 32. String Template
+    val greeting = "Human"
+    // 1.Prints a string with a variable reference. References in strings start with $.
+    // 2.Prints a string with an expression. Expressions start with $ and are enclosed in curly braces.
+    println("Hello $greeting")                 // 1
+    println("Hello ${greeting.uppercase()}")  // 2
 
-
+    //todo 33. Destructuring Decalrations
+    //Destructures an Array. The number of variables on the left side matches the number of arguments on the right side.
+    //Maps can be destructured as well. name and age variables are mapped to the map key and value.
+    //Built-in Pair and Triple types support destructuring too, even as return values from functions.
+//    val (x1, y1, z1) = arrayOf(5, 10, 15)                              // 1
+//
+//    val map = mapOf("Alice" to 21, "Bob" to 25)
+//    for ((name, age) in map) {                                      // 2
+//        println("$name is $age years old")
+//    }
+//
+//    val (min, max) = findMinMax(listOf(100, 90, 50, 98, 76, 83))    // 3
 
 }
 
