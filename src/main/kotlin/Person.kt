@@ -1,6 +1,6 @@
 class Person (val firstName:String = "Abel",val lastname:String = "Aura"){
 
-    //Can be assigned form outside the class
+    //Can be assigned from outside the class
     var nickName: String? = null
         //Overriding setter
         set(value) {

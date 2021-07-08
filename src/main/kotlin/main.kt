@@ -1,3 +1,7 @@
+//#Author: Jorge Guzman Nader
+//#Date: 7/7/2021
+//#Info:Kotlin Tutorial
+
 import java.lang.Math.abs
 
 fun myFun(): String {
@@ -349,8 +353,16 @@ fun main(args: Array<String>) {
     //todo 30. getOrElse
     //Gets an element or else prints a default value
     val list = listOf(0, 10, 20)
-    println(list.getOrElse(1) { 42 })
-    println(list.getOrElse(10) { 42 })
+//    println(list.getOrElse(1) { 42 })
+//    println(list.getOrElse(10) { 42 })
+
+    //todo 31. Named Arguments
+    //Calls a function with named arguments.
+    //When invoking a function with named arguments, you can specify them in any order you like.
+    fun format(userName1: String  = "Momo", domain1:String = "Log.com")= println("$userName1: $domain1")
+    format(domain1 = "bar.com", userName1 = "foo")
+
+
 
 
 }
