@@ -1,3 +1,7 @@
+//#Author: Jorge Guzman Nader
+//#Date: 7/7/2021
+//#Info:Kotlin Tutorial
+
 import java.lang.Math.abs
 
 fun myFun(): String {
