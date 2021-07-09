@@ -63,7 +63,8 @@ fun main(args: Array<String>) {
 //    println("The result of xs * ys is: ${xs * ys} ")
 
 //
-//    //todo 3.You can make a variable null by adding ?
+//    //todo 3.Null Safety
+//    //You can make a variable null by adding ?
 //    var laws: String? = null
 //    println(laws)
 
@@ -79,7 +80,8 @@ fun main(args: Array<String>) {
 //        println(nada)
 //    }
 
-    /*todo 5.When Statement is like Switch in Java
+    /*todo 5.When
+    *When statement is like Switch in Java
     *When nada is null print "is null
     *Else print "Is not null"
     */
@@ -104,7 +106,7 @@ fun main(args: Array<String>) {
     *COLLECTIONS AND ITERATIONS
      */
 
-    //todo 7.Arrays
+    //todo 7.Arrays, for loops
     //Can infer the type of the array eg.int, strings
     val myArray = arrayOf("A","B","C ")
 //    println(stringArr.size)
@@ -113,6 +115,14 @@ fun main(args: Array<String>) {
     //For loop
 //    for (myArray in myArray){
 //        println(myArray)
+//    }
+
+//    for (i in 10 downTo 1 step 2){
+//        println(i)
+//    }
+
+//    for ( i in 'z' downTo 'a'){
+//        println(i)
 //    }
 
     //it is default name of the array i this lambda function
@@ -143,6 +153,14 @@ fun main(args: Array<String>) {
     val myGreetings = listOf("Hola", "Bonjour", "Ola")
 
 //    myList.add("Omega")
+
+    //Remove specific element
+//    myList.remove("Alpha")
+//    println(myList)
+
+    //Remove at an index
+//    println(myList.removeAt(2))
+//    println(myList)
 
 //    myList.forEachIndexed { index, myList ->
 //        println("$myList index is $index")
@@ -369,7 +387,7 @@ fun main(args: Array<String>) {
     //Calls a function with named arguments.
     //When invoking a function with named arguments, you can specify them in any order you like.
     fun format(userName1: String  = "Momo", domain1:String = "Log.com")= println("$userName1: $domain1")
-    format(domain1 = "bar.com", userName1 = "foo")
+//    format(domain1 = "bar.com", userName1 = "foo")
 
     //todo 32. String Template
     val greeting = "Human"
@@ -390,6 +408,41 @@ fun main(args: Array<String>) {
 //    }
 //
 //    val (min, max) = findMinMax(listOf(100, 90, 50, 98, 76, 83))    // 3
+
+    //todo 34. User Input
+    val listUser = mutableListOf<Int>()
+//    val userInput = readLine()
+//    println("You entered: $userInput")
+//    //You can also modify the input but must add ? to indicate in case of null (no input)
+//    println(userInput?.uppercase())
+//    //Using arithmetic operators
+//    if (userInput != null) {
+//        println("your result is ${userInput.toInt() - 5}")
+//    }
+
+    //This can just be done with mutableList and not arrays
+//    for(i in 1..10){
+//        val userInput1 = readLine()?.toInt()
+//        //check if it is not null
+//        if (userInput1 != null){
+//            listUser.add(userInput1)
+//        }
+//    }
+//    println(listUser)
+
+    //Average
+    println("Enter 3 numbers")
+    var avg = 0.0
+    for (i in 1..3){
+        val input = readLine()?.toDouble()
+        if (input != null){
+            avg += input /3
+        }
+    }
+    println(avg)
+
+
+
 
 
 
