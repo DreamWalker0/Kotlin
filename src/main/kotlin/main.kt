@@ -53,6 +53,15 @@ fun main(args: Array<String>) {
 //    name2 = "Dog"
 //
 //    println(name + " an d "+ name2)
+
+    //println will use just one data type, int, bool, float
+    //println( 17.0 / 7.0)
+
+    //you can also print the whole expression result
+//    var xs = 10
+//    var ys = 2
+//    println("The result of xs * ys is: ${xs * ys} ")
+
 //
 //    //todo 3.You can make a variable null by adding ?
 //    var laws: String? = null
@@ -366,10 +375,10 @@ fun main(args: Array<String>) {
     val greeting = "Human"
     // 1.Prints a string with a variable reference. References in strings start with $.
     // 2.Prints a string with an expression. Expressions start with $ and are enclosed in curly braces.
-    println("Hello $greeting")                 // 1
-    println("Hello ${greeting.uppercase()}")  // 2
+//    println("Hello $greeting")                 // 1
+//    println("Hello ${greeting.uppercase()}")  // 2
 
-    //todo 33. Destructuring Decalrations
+    //todo 33. Destructuring Declarations
     //Destructures an Array. The number of variables on the left side matches the number of arguments on the right side.
     //Maps can be destructured as well. name and age variables are mapped to the map key and value.
     //Built-in Pair and Triple types support destructuring too, even as return values from functions.
@@ -381,6 +390,9 @@ fun main(args: Array<String>) {
 //    }
 //
 //    val (min, max) = findMinMax(listOf(100, 90, 50, 98, 76, 83))    // 3
+
+
+
 
 }
 
