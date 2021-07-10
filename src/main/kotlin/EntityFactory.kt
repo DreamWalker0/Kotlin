@@ -1,7 +1,7 @@
 import java.util.*
 import javax.swing.text.html.parser.Entity
 
-//todo 15.Companion Objects
+//todo 15. Companion Objects
 //interface IdProvider{
 //
 //    fun getId(): String
@@ -46,7 +46,7 @@ class Entity(val id:String, val name:String){
 //        fun create() = Entity(getId())
 //    }
 
-    //todo 16.Object Declaration
+    //todo 16. Object Declaration
     override fun toString(): String {
         return "id:$id name:$name"
     }

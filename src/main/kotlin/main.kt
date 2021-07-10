@@ -1,9 +1,11 @@
 //#Author: Jorge Guzman Nader
 //#Date: 7/7/2021
-//#Info:Kotlin Tutorial
+//#Info: Kotlin Tutorial
 
 import java.lang.Math.abs
 
+//todo 0. Functions
+//Function Structure
 fun myFun(): String {
     return "This is a function"
 }
@@ -41,14 +43,28 @@ fun sayHelloVararg(greeting: String, vararg items:String){
 //    }
 //}
 
+//power function
+fun toThePower(base: Int, exp: Int) {
+    var result = 1
+    for (i in 1..exp){
+        result *= base
+    }
+    println("$base to power of $exp is: $result")
+}
+
+//A1: test Higher Order function
+fun operation(): (Int) -> Int {
+    return ::square
+}
+
+fun square(x: Int) = x * x
+
 fun main(args: Array<String>) {
-    /*
-     * //VARIABLES//
-     */
-    //todo 1.Non-mutable variable, read only
+
+    //todo 1. val: Non-mutable variable, read only
 //    val name: String = "Dog"
 //
-//    //todo 2.Mutable variable: Can be reassign
+       //todo 2. var: Mutable variable: Can be reassign
 //    var name2: String = "Cat"
 //    name2 = "Dog"
 //
@@ -63,12 +79,13 @@ fun main(args: Array<String>) {
 //    println("The result of xs * ys is: ${xs * ys} ")
 
 //
-//    //todo 3.Null Safety
+      //todo 3. Null Safety
 //    //You can make a variable null by adding ?
 //    var laws: String? = null
 //    println(laws)
 
-    //todo 4. variable type is auto-detected
+    //todo 4. Data Types
+    //variable type is auto-detected
 //    var num = 5
 //    var word = "hello"
 //    var decimal = 2.33
@@ -80,7 +97,7 @@ fun main(args: Array<String>) {
 //        println(nada)
 //    }
 
-    /*todo 5.When
+    /*todo 5. When
     *When statement is like Switch in Java
     *When nada is null print "is null
     *Else print "Is not null"
@@ -90,15 +107,18 @@ fun main(args: Array<String>) {
 //        else -> println("Is not null")
 //    }
 
-    //todo 6.Assign variable value using if statement
-    var a = 5
-    var b = 10
-    val result = if (b>a) b else "a is greater"
-    //println(result)
+//    var z = 5
+//    when{
+//        z % 2 == 0 -> println("Is even")
+//        z % 2 != 0 -> println("Is odd")
+//    }
 
-    /*
-     * //FUNCTIONS//
-     */
+    //todo 6. If, Else
+    //Assign variable value using if statement
+//    var a = 5
+//    var b = 10
+//    val result = if (b>a) b else "a is greater"
+    //println(result)
 
     //sayHelloShort("Hola", "Mulu")
 
@@ -106,9 +126,9 @@ fun main(args: Array<String>) {
     *COLLECTIONS AND ITERATIONS
      */
 
-    //todo 7.Arrays, for loops
+    //todo 7. Arrays, For Loops
     //Can infer the type of the array eg.int, strings
-    val myArray = arrayOf("A","B","C ")
+//    val myArray = arrayOf("A","B","C ")
 //    println(stringArr.size)
 //    println(stringArr[2])
 
@@ -168,15 +188,23 @@ fun main(args: Array<String>) {
     //Function call
     //sayHelloList("Bonjour", myList)
 
-    //todo 9.Map
+    //Reverse order list
+    //The myList2.size - 1 is to start the index at 2 because the size of the list is 3
+//    var myList2 = mutableListOf<Int>(1,2,3)
+//    for (i in myList2.size - 1 downTo  0){
+//        println(myList2[i])
+//    }
+
+
+    //todo 9. Map
 //    val myMap = mapOf(1 to "A", 2 to "B", 3 to "C")
 //    myMap.forEach { key, value -> println("$key is the key of $value") }
     //Mutable map
-    val myMap = mutableMapOf(1 to "A", 2 to "B", 3 to "C")
+//    val myMap = mutableMapOf(1 to "A", 2 to "B", 3 to "C")
 //    myMap.put(4, "D")
 //    myMap.forEach { key, value -> println("$key is the key of $value") }
 
-    //todo 10.vararg
+    //todo 10. vararg
     //vararg = variable number of arguments
 //    fun sayHelloList(greeting: String, vararg items:List<String>){
 //        items.forEach { items ->
@@ -195,10 +223,10 @@ fun main(args: Array<String>) {
 //    greetPerson(greeting = "Salut")
 
     //Add multiple words to elements of an array using items = *fancyArray
-    val fancyArray = arrayOf("Alba","Balto","Cook ")
+//    val fancyArray = arrayOf("Alba","Balto","Cook ")
     //sayHelloVararg(greeting = "Hola", items = *fancyArray)
 
-    //todo 11.Classes
+    //todo 11. Classes
 
     //Instance of a class:Constructor
 //    val person = Person()
@@ -210,7 +238,7 @@ fun main(args: Array<String>) {
 //    println(person.nickName)
 //    person.printInfo()
 
-    //todo 12.Interfaces
+    //todo 12. Interfaces
     //Uses PersonInfoProvider
 //    val provider = FancyInfoProvider()
 //    provider.printInfo(Person())
@@ -219,7 +247,7 @@ fun main(args: Array<String>) {
 //    checkTypes(provider)
 
 
-    //todo 14.Object Expression
+    //todo 14. Object Expression
 //    val provider = object : PersonInfoProvider {
 //        override val providerInfo: String
 //            get() = "New info provider"
@@ -268,7 +296,7 @@ fun main(args: Array<String>) {
     var x = 5
 //    println("The square of $x is " + func(x))
 
-    //todo 19.Filters
+    //todo 19. Filters
     val numbs = listOf(-1,-3,5,7,-10,-3,0)
     val positive = numbs.filter { it > 0 }
     val negative = numbs.filter { it < 0 }
@@ -300,7 +328,7 @@ fun main(args: Array<String>) {
 //    println("None numbers are even? " + noneEven)
 //    println("None numbers are more than 11 " + noneMoreThan11)
 
-    //todo 22.find, findLast
+    //todo 22. find, findLast
     val words = listOf("Lets", "find", "something", "in", "collection", "somehow")
     val firstWord = words.find { it.startsWith("some") }
     val lastWord = words.findLast { it.startsWith("some") }
@@ -342,7 +370,7 @@ fun main(args: Array<String>) {
     val peopleCities = people.groupBy(Person::city, Person::name)
     val lastPersonCity = people.associateBy(Person::city, Person::name)
 
-    //todo 26 partition
+    //todo 26. partition
     //Divides groups by specified parameters
     val (even, Odd) = numbers.partition { it % 2 == 0 }
     val (positives, negatives) = numbers.partition { it > 0}
@@ -431,30 +459,21 @@ fun main(args: Array<String>) {
 //    println(listUser)
 
     //Average
-    println("Enter 3 numbers")
-    var avg = 0.0
-    for (i in 1..3){
-        val input = readLine()?.toDouble()
-        if (input != null){
-            avg += input /3
-        }
-    }
-    println(avg)
-
-
-
-
+//    println("Enter 3 numbers")
+//    var avg = 0.0
+//    for (i in 1..3){
+//        val input = readLine()?.toDouble()
+//        if (input != null){
+//            avg += input /3
+//        }
+//    }
+//    println(avg)
 
 
 
 }
 
-//A1: test Higher Order function
-fun operation(): (Int) -> Int {
-    return ::square
-}
 
-fun square(x: Int) = x * x
 
 
 
