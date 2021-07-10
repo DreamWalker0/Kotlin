@@ -43,7 +43,7 @@ fun sayHelloVararg(greeting: String, vararg items:String){
 //    }
 //}
 
-//power function
+//power function with no return
 fun toThePower(base: Int, exp: Int) {
     var result = 1
     for (i in 1..exp){
@@ -51,13 +51,36 @@ fun toThePower(base: Int, exp: Int) {
     }
     println("$base to power of $exp is: $result")
 }
+//power function with return type
+//Needed so we can assign the function to a variable
+fun toThePowerReturn(base: Int, exp: Int): Int {
+    var result = 1
+    for (i in 1..exp){
+        result *= base
+    }
+    return  result
+}
 
 //A1: test Higher Order function
 fun operation(): (Int) -> Int {
     return ::square
 }
-
+//Square function
 fun square(x: Int) = x * x
+
+//Extension functions
+//These extend the ability of functions to do stuff
+//ex.a prime number finder using Ints
+fun Int.isPrime(): Boolean{
+    for ( i in 2 until this -1){
+        if (this % i == 0){
+            return false
+        }
+    }
+    return true
+}
+
+
 
 fun main(args: Array<String>) {
 
@@ -211,11 +234,12 @@ fun main(args: Array<String>) {
 //            println("$greeting $items")
 //        }
 //    }
-    //Because the vararg you can pass the arguments directly in the function call
+    //Because the vararg you can pass the arguments with no limit inside the fucntion call
 //    sayHelloVararg("Hola", "Mol","Mel","Mil")
 
-    //Using spray operator: "*" in front the array
-    //sayHelloVararg("Hola", *myArray)
+    //We can insert arrays using the spray operator: "*" in front the array
+//    var myArray = arrayOf("Pepe", "Alba", "Lulu")
+//    sayHelloVararg("Hola", *myArray)
 
     //Changing the order of parameters does not change the parameters
     //we can skip specifying arguments if we have default ones in the function
@@ -468,6 +492,21 @@ fun main(args: Array<String>) {
 //        }
 //    }
 //    println(avg)
+
+    //Using the return function
+//    val pow = toThePowerReturn(2,2)
+//    println(3 * pow)
+
+    //Testing Extension Function
+//    println("Enter a number, please")
+//    var input = readLine()?.toInt()
+//    if (input != null){
+//        if (input.isPrime()) {
+//            println("$input is a prime number")
+//        }else{
+//            println("$input is not a prime")
+//        }
+//    }
 
 
 
