@@ -262,6 +262,11 @@ fun main(args: Array<String>) {
 //    println(person.nickName)
 //    person.printInfo()
 
+    //Calls rectangle class
+//    val myRectangle = Rectangle(5.0,5.0)
+//    println("Rectangle area is ${myRectangle.area()}")
+//    println("Rectangle perimeter is ${myRectangle.perimeter()}")
+
     //todo 12. Interfaces
     //Uses PersonInfoProvider
 //    val provider = FancyInfoProvider()
