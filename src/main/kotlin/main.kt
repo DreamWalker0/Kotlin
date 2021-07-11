@@ -3,6 +3,7 @@
 //#Info: Kotlin Tutorial
 
 import java.lang.Math.abs
+import kotlin.system.measureTimeMillis
 
 //todo 0. Functions
 //Function Structure
@@ -43,24 +44,6 @@ fun sayHelloVararg(greeting: String, vararg items:String){
 //    }
 //}
 
-//power function with no return
-fun toThePower(base: Int, exp: Int) {
-    var result = 1
-    for (i in 1..exp){
-        result *= base
-    }
-    println("$base to power of $exp is: $result")
-}
-//power function with return type
-//Needed so we can assign the function to a variable
-fun toThePowerReturn(base: Int, exp: Int): Int {
-    var result = 1
-    for (i in 1..exp){
-        result *= base
-    }
-    return  result
-}
-
 //A1: test Higher Order function
 fun operation(): (Int) -> Int {
     return ::square
@@ -80,6 +63,46 @@ fun Int.isPrime(): Boolean{
     return true
 }
 
+//Overloading a function
+fun maxArea(shape1: Shape, shape2: Shape): Double {
+    val areaShape1 = shape1.area()
+    val areaShape2 = shape2.area()
+    return if (areaShape1 > areaShape2) areaShape1 else areaShape2
+}
+//Overload
+//new function has shape3 making it unique abd being able to overload
+fun maxArea(shape1: Shape, shape2: Shape, shape3: Shape): Double {
+    val maxAreaShape1Shape2 = shape3.area()
+    val areaShape3 = shape3.area()
+    return if (maxAreaShape1Shape2 > areaShape3) maxAreaShape1Shape2 else areaShape3
+}
+
+//Power function with no return
+fun toThePower(base: Int, exp: Int) {
+    var result = 1
+    for (i in 1..exp){
+        result *= base
+    }
+    println("$base to power of $exp is: $result")
+}
+//Power function with return type
+//Needed so we can assign the function to a variable
+fun toThePowerReturn(base: Int, exp: Int): Int {
+    var result = 1
+    for (i in 1..exp){
+        result *= base
+    }
+    return  result
+}
+
+//Power using recursion
+fun powerRecursion(base: Int, exp:Int):Int{
+    return if (exp != 0 ){
+        base * powerRecursion(base, exp - 1)
+    }else{
+        1
+    }
+}
 
 
 fun main(args: Array<String>) {
@@ -182,7 +205,7 @@ fun main(args: Array<String>) {
 //        println("$myArray is at index $index")
 //    }
 
-    //todo 8.Lists
+    //todo 8. Lists
     //Lists are immutable
 //    val myList = listOf("Alpha","Beta","Gamma")
 //    //println(myList[1])
@@ -275,6 +298,13 @@ fun main(args: Array<String>) {
 //    provider.getSessionId()
 //    checkTypes(provider)
 
+    //todo 13. Inheritance
+    //Look up Shape.kt(super class) and rectangle.kt
+//    val rectangle1 = Rectangle(2.0,4.0)
+//    rectangle1.changeName("Strange Geometry")
+//    println(rectangle1.name)
+
+
 
     //todo 14. Object Expression
 //    val provider = object : PersonInfoProvider {
@@ -324,6 +354,27 @@ fun main(args: Array<String>) {
     val func = operation()
     var x = 5
 //    println("The square of $x is " + func(x))
+
+    //todo 15. Companion Objects
+    //Refer to ImportantNumber.kt, Circle.kt, EntityFactory.kt
+    //Companion Object eliminate the need of declaring an instance of a class
+    //ex. val myCircle = Circle(5.0
+    //ex continues. val circle = myCircle.randomCircle()
+
+    //However with companion object you can just dot the class
+//    val circle = Circle.randomCircle()
+
+    //todo 16. Anonymous Classes
+
+
+    //todo 17. Higher Order Function
+    //refer to HigherOrderFunction.kt
+//    val listHigher = listOf("Kotlin","Java","Python")
+//    printfilteredStrings(listHigher){
+//        it.startsWith("P")}
+
+    //todo 18.
+
 
     //todo 19. Filters
     val numbs = listOf(-1,-3,5,7,-10,-3,0)
@@ -498,10 +549,6 @@ fun main(args: Array<String>) {
 //    }
 //    println(avg)
 
-    //Using the return function
-//    val pow = toThePowerReturn(2,2)
-//    println(3 * pow)
-
     //Testing Extension Function
 //    println("Enter a number, please")
 //    var input = readLine()?.toInt()
@@ -513,6 +560,45 @@ fun main(args: Array<String>) {
 //        }
 //    }
 
+
+    //todo 35.Overloading Functions
+    //Refer to functions maxArea()
+//    val square = Rectangle(7.0)
+//    println("square area is ${square.area()}")
+//    val rect = Rectangle(5.0,3.0)
+//    println("rectangle area is ${rect.area()}")
+//
+//
+//    val maxAreaSquareAndRect = maxArea(square, rect)
+//    println("The max area of Square and Rectangle is $maxAreaSquareAndRect ")
+
+    //todo 36. Testing Execution Time
+    //Using the return power function
+//    println("Please enter a base to be rise to an exponent: ")
+//    val base = readLine()?.toInt()
+//    println("Please enter an exponent: ")
+//    val exp = readLine()?.toInt()
+//
+//    //Measuring time performance of the function
+//    val executionTime = measureTimeMillis {
+//        if (base != null && exp != null) {
+//            println("Normal function: $base^$exp = ${toThePowerReturn(base, exp)}")
+//        }
+//    }
+//    println("(The operation took $executionTime ms)")
+
+//    val pow = toThePowerReturn(2,2)
+//    println(3 * pow)
+
+    //Power function using recursion
+    //Measuring time performance of the function
+    //Gives error with bigger numbers
+//    val executionTime = measureTimeMillis {
+//        if (base != null && exp != null) {
+//            println("Recursion function: $base^$exp = ${powerRecursion(base, exp)}")
+//        }
+//    }
+//    println("(The operation took $executionTime ms)")
 
 
 }

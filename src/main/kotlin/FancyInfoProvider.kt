@@ -1,4 +1,4 @@
-//todo 13. Inheritance
+//Inheritance class
 class FancyInfoProvider : BasicInfoProvider() {
 
     override val sessionIdPrefix: String

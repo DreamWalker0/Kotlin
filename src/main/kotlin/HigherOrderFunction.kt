@@ -1,4 +1,4 @@
-//todo 17. Higher Order Function
+//Higher Order Function
 //Predicate is a function that takes an String and returns a Boolean
 fun printfilteredStrings(list:List<String>,predicate: (String) -> Boolean){
     list.forEach {
