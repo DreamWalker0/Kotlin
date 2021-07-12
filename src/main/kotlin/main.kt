@@ -2,7 +2,9 @@
 //#Date: 7/7/2021
 //#Info: Kotlin Tutorial
 
+import java.lang.Exception
 import java.lang.Math.abs
+import java.lang.NumberFormatException
 import kotlin.system.measureTimeMillis
 
 //todo 0. Functions
@@ -365,15 +367,70 @@ fun main(args: Array<String>) {
 //    val circle = Circle.randomCircle()
 
     //todo 16. Anonymous Classes
-
+    //Refer to Shape.kt
+    //Anonymous classes allow the use of existing classes without need to modify them
+//    val a = 3.0
+//    val b = 4.0
+//    val height = 2.0
+//    //Use object to implement Anonymous class even if it is abstract
+//    val parallelogram = object : Shape("Parallelogram",a,b,height){
+//        //This is the Anonymous Class
+//
+//        init {
+//            println("Parallelogram created with a = $a, b = $b and height = $height")
+//            println("The Parallelogram area is ${area()} ")
+//            println("The Parallelogram perimeter is ${perimeter()}")
+//        }
+//        override fun area(): Double {
+//            return a * height
+//        }
+//
+//        override fun perimeter(): Double {
+//            return 2 * a + 2 * b
+//        }
+//
+//        //You can even add new Functions
+//        fun isRectangle(): Boolean = height == b
+//    }
+//
+//    println("Is the Parallelogram a rectangle? ${parallelogram.isRectangle()}")
 
     //todo 17. Higher Order Function
     //refer to HigherOrderFunction.kt
 //    val listHigher = listOf("Kotlin","Java","Python")
-//    printfilteredStrings(listHigher){
+//    printFilteredStrings(listHigher){
 //        it.startsWith("P")}
 
-    //todo 18.
+    //todo 18. Exceptions
+    //Prevents crashing when an error happens and executes what is on the catch block
+//     val input = try {
+//         readLine()?.toInt()
+//     }catch (e: NumberFormatException){
+//         0
+//     } finally {
+//         //This is executed in all cases
+//         println("This is from the finally block")
+//     }
+//    println("You entered: $input")
+    //try, catch can be used just as try{}catch{}
+
+    //You can use try, catch in functions too
+//    class DivisionByZeroException : Exception("You can't divide by zero")
+//
+//    fun divide(a: Double, b: Double): Double{
+//        if ( b == 0.0){
+//            throw DivisionByZeroException()
+//        }
+//        return a / b
+//    }
+//
+//    val division = try {
+//        divide(3.0,0.0)
+//    }catch (e:DivisionByZeroException){
+//        0.0
+//    }
+//    println("The result of the division is $division")
+
 
 
     //todo 19. Filters
@@ -600,7 +657,25 @@ fun main(args: Array<String>) {
 //    }
 //    println("(The operation took $executionTime ms)")
 
+    //todo 37. Lambda Functions
+    var listA = (1..20).toList()
+    println(listA)
+    //Using lambda to check if a number is even
+    //This filters odd numbers out of the list
+    listA = listA.filter { it % 2 == 0 }
+    println(listA)
 
+    //Create a lambda function
+//    fun List<Shape>.costumeFilter(filterFunction: (Shape) -> (Boolean)): List<Shape>{
+//        val resultList = mutableListOf<Shape>()
+//        //"this" is costumeFilter function
+//        for (shape in this)
+//            if (filterFunction(shape)) {
+//                resultList.add(shape)
+//
+//            }
+//        return resultList
+//    }
 }
 
 

@@ -3,6 +3,9 @@
 //protected makes the variable just accessible from the super class and all the classes that inherit them
 //ex. protected var name: String
 abstract class Shape (var name: String){
+
+    constructor(name: String, vararg dimensions: Double) : this(name)
+
     init {
         println("This is the Shape super Class")
     }

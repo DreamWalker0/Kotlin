@@ -1,6 +1,6 @@
 //Higher Order Function
 //Predicate is a function that takes an String and returns a Boolean
-fun printfilteredStrings(list:List<String>,predicate: (String) -> Boolean){
+fun printFilteredStrings(list:List<String>,predicate: (String) -> Boolean){
     list.forEach {
         if (predicate(it)){
             println(it)
@@ -11,6 +11,6 @@ fun printfilteredStrings(list:List<String>,predicate: (String) -> Boolean){
 
 fun main(){
     val list = listOf("Kotlin","Java","Python")
-    printfilteredStrings(list){
+    printFilteredStrings(list){
         it.startsWith("P")}
 }
